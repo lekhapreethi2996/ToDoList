@@ -128,11 +128,12 @@ app.post("/delete",function(req,res){
   if(req.body.listName === "Today"){
     Item.find({_id: req.body.checkVal},function(err, fitem){
     if(req.body.checkVal === req.body.delVal){
-      let decision = readline.question("Please enter 'Y' to delete this item!!!!");
-      console.log('decision: ' + decision);
-      if(decision === 'Y'){
-        Item.deleteOne({_id: req.body.delVal},function(err, items){});
-      }
+      // let decision = readline.question("Please enter 'Y' to delete this item!!!!");
+      // console.log('decision: ' + decision);
+      // if(decision === 'Y'){
+      //   Item.deleteOne({_id: req.body.delVal},function(err, items){});
+      // }
+      Item.deleteOne({_id: req.body.delVal},function(err, items){});
 
     }else{
       fitem.forEach(function(i){
